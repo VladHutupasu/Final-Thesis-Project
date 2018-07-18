@@ -125,9 +125,12 @@ def trainAndtest(money, prevDays, short, long):
 
 
 
-    final_accuracy = accuracy/daysTraded *100
-    print('Accuracy is: '+str(final_accuracy)+'%')
-    print('Wallet balance is at: '+str(money))
+    try:
+        final_accuracy = accuracy/daysTraded *100
+        print('Accuracy is: '+str(final_accuracy)+'%')
+        print('Wallet balance is at: '+str(money))
+    except ZeroDivisionError:
+        print("Introduce a bigger amount of money.")
 
     finalProffitLoss = money-initialMoney
 
